@@ -1,66 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator FEM</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="theme-1">
-    
+
+<body class="theme_1">
+
     <div class="container">
         <div class="calculator flex">
-            <div class="calculator--top flex">
+            <div class="calculator__top flex">
                 <h1>calc</h1>
                 <p>THEME</p>
-                <div class="calculator--top--right flex">
-                    
-                    <div class="calculator--top--right--toggle flex">
-                        <div class="toggle--numbers flex">
+                <div class="calculator__top_right flex">
+
+                    <div class="calculator__top_right_toggle flex">
+                        <div class="toggle__numbers flex">
                             <p id="theme1">1</p>
                             <p id="theme2">2</p>
                             <p id="theme3">3</p>
                         </div>
-                        <div class="toggle--wrapper">
-                            <div class="toggle" id="toggle"></div>
+                        <div class="toggle__wrapper">
+                            <div class="toggle__btn toggle_one" id="toggle__btn"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="calculator--display">
-                <p id="display--numbers">0</p>
+            <div class="calculator__display">
+                <p id="display__numbers">0</p>
             </div>
-            <div class="calculator--numbers">
-                <ul class="calculator--numbers--inner">
-                <li class="number">7</li>
-                <li class="number">8</li>
-                <li class="number">9</li>
-                <li id="del" onclick="del()">DEL</li>
+            <div class="calculator__numbers">
+                <ul class="calculator__numbers_inner">
+                    <li class="number">7</li>
+                    <li class="number">8</li>
+                    <li class="number">9</li>
+                    <li id="del" onclick="del()">DEL</li>
 
-                <li class="number">4</li>
-                <li class="number">5</li>
-                <li class="number">6</li>
-                <li class="number">+</li>
+                    <li class="number">4</li>
+                    <li class="number">5</li>
+                    <li class="number">6</li>
+                    <li class="number">+</li>
 
-                <li class="number">1</li>
-                <li class="number">2</li>
-                <li class="number">3</li>
-                <li class="number">-</li>
+                    <li class="number">1</li>
+                    <li class="number">2</li>
+                    <li class="number">3</li>
+                    <li class="number">-</li>
 
-                <li class="number">.</li>
-                <li class="number">0</li>
-                <li class="number">/</li>
-                <li class="number">*</li>
+                    <li class="number">.</li>
+                    <li class="number">0</li>
+                    <li class="number">/</li>
+                    <li class="number" id="mult" hidden>*</li>
 
-                <li id="reset" onclick="res()">RESET</li>
-                <li id="equal" onclick="equal()">=</li>
-            </ul>
+                    <li id="reset" onclick="res()">RESET</li>
+                    <li id="equal" onclick="equal()">=</li>
+                </ul>
             </div>
-            
+
         </div>
     </div>
 
 
     <script src="app.js"></script>
 </body>
+
 </html>
