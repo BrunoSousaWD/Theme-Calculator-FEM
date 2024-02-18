@@ -2,18 +2,17 @@ let number = document.querySelectorAll('.number');
 let display = document.getElementById('display__numbers');
 
 
-number.forEach(function (numbers) {
 
-    numbers.addEventListener('click', () => {
-        let currentDisplay = display.innerHTML;
-        if (currentDisplay === '0') {
-            display.innerHTML = numbers.innerHTML;
-        } else {
-            display.innerHTML = currentDisplay + numbers.innerHTML;
-        }
-    })
+
+function addToDisplay(number) {
+    let currentDisplay = display.innerHTML;
+    if (currentDisplay === '0') {
+        display.innerHTML = number;
+    } else {
+        display.innerHTML = currentDisplay += number;
+    }
     return display.innerHTML;
-});
+}
 
 
 function equal() {
@@ -47,13 +46,15 @@ toggleBtn.addEventListener('click', () => {
     if (toggleBtn.classList.contains('toggle_one')) {
         toggleBtn.classList.replace('toggle_one', 'toggle_two');
 
-        document.body.classList.add('theme_3');
-        document.body.classList.remove('theme_1', 'theme_2');
+        document.body.classList.add('theme_2');
+        document.body.classList.remove('theme_1', 'theme_3');
+
     } else if (toggleBtn.classList.contains('toggle_two')) {
         toggleBtn.classList.replace('toggle_two', 'toggle_three');
 
-        document.body.classList.add('theme_2');
-        document.body.classList.remove('theme_1', 'theme_3');
+        document.body.classList.add('theme_3');
+        document.body.classList.remove('theme_1', 'theme_2');
+
     } else if (toggleBtn.classList.contains('toggle_three')) {
         toggleBtn.classList.replace('toggle_three', 'toggle_one');
 
@@ -61,6 +62,8 @@ toggleBtn.addEventListener('click', () => {
         document.body.classList.remove('theme_2', 'theme_3');
     }
 })
+
+
 
 theme1.addEventListener('click', () => {
     toggleBtn.classList.add('toggle_one');

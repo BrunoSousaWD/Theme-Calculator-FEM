@@ -32,6 +32,9 @@
     --key-gray: hsl(30, 25%, 89%);
     --key-gray-shadow: hsl(28, 16%, 65%);
 
+    --title-display-font-color: hsl(0, 0%, 100%);
+    --numbers-font-color: hsl(221, 14%, 31%);
+
     --dark-font-color: hsl(221, 14%, 31%);
     --light-font-color: hsl(0, 0%, 100%);
 
@@ -44,24 +47,27 @@
 .theme_2 {
     --body-bg-color: hsl(0, 0%, 90%);
     --keypad-bg: hsl(0, 5%, 81%);
-    --screen-bg: hsl(0, 0%, 93%);
+    --screen-bg: hsl(0, 0%, 97%);
 
     /* keys */
     --key-blue-bg: hsl(185, 42%, 37%);
     --key-blue-shadow: hsl(185, 58%, 25%);
 
-    --key-equal: hsl(25, 98%, 40%);
+    --key-equal: hsl(22, 91%, 46%);
     --key-equal-shadow: hsl(25, 99%, 27%);
 
     --key-gray: hsl(45, 7%, 89%);
     --key-gray-shadow: hsl(35, 11%, 61%);
 
+    --title-display-font-color: hsl(60, 10%, 19%);
+    --numbers-font-color: hsl(60, 10%, 19%);
+
     --dark-font-color: hsl(60, 10%, 19%);
     --light-font-color: hsl(0, 0%, 100%);
 
     /*hover*/
-    --key-equal-hover: hsl(6, 78%, 64%);
-    --key-blue-bg-hover: hsl(225, 70%, 79%);
+    --key-equal-hover: hsl(29, 86%, 54%);
+    --key-blue-bg-hover: hsl(185, 44%, 54%);
     --bg-number-hover: hsl(0, 0%, 100%);
 }
 
@@ -82,12 +88,17 @@
     --key-gray: hsl(268, 47%, 21%);
     --key-gray-shadow: hsl(290, 70%, 36%);
 
+    --title-display-font-color: hsl(52, 100%, 62%);
+    --numbers-font-color: hsl(52, 100%, 62%);
+    --equal-btn-font-color: hsl(198, 20%, 13%);
+
     --dark-font-color: hsl(52, 100%, 62%);
     --light-font-color: hsl(0, 0%, 100%);
 
     /*hover*/
     --key-equal-hover: hsl(177, 92%, 70%);
     --key-blue-bg-hover: hsl(290, 70%, 36%);
+    --bg-number-hover: hsl(271, 91%, 52%);
 }
 
 /* End Themes */
@@ -113,14 +124,14 @@ ul {
 
 
 .calculator {
-    width: 490px;
+    max-width: 490px;
     flex-direction: column;
     gap: 2em;
 }
 
 .calculator__top {
     width: 100%;
-    color: var(--light-font-color);
+    color: var(--title-display-font-color);
     justify-content: space-between;
     align-items: last baseline;
 }
@@ -199,7 +210,7 @@ ul {
 #display__numbers {
     padding: 40px 20px;
     font-size: 45px;
-    color: var(--light-font-color);
+    color: var(--title-display-font-color);
 }
 
 
@@ -223,7 +234,7 @@ ul li {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    
+
     padding-top: 6px;
     cursor: pointer;
 }
@@ -231,24 +242,17 @@ ul li {
 .number {
     background: var(--key-gray);
     box-shadow: 0px 3px var(--key-gray-shadow);
-    color: var(--dark-font-color);
+    color: var(--numbers-font-color);
     font-size: 32px;
 }
 
-.number:hover{
+.number:hover {
     background-color: var(--bg-number-hover);
 }
 
 #mult {
     position: relative;
     color: transparent;
-}
-
-#mult::after {
-    content: 'x';
-    position: absolute;
-    inset: 1;
-    color: var(--dark-font-color);
 }
 
 #del__btn {
@@ -272,7 +276,7 @@ ul li {
 
 #equal__btn {
     grid-column: 3/5;
-    color: var(--light-font-color);
+    color: var(--equal-btn-font-color);
     background: var(--key-equal);
     box-shadow: 0px 3px var(--key-equal-shadow);
 }
@@ -284,6 +288,54 @@ ul li {
 
 #del__btn,
 #reset__btn,
-#equal__btn{
+#equal__btn {
     font-size: 22px;
+}
+
+/* media queries */
+
+@media screen and (min-width: 375px) {
+    .container {
+        width: 90%;
+    }
+
+    .calculator__top {
+        justify-content: unset;
+    }
+
+    .calculator__top_right_toggle {
+        margin-left: 33px;
+    }
+
+    .calculator__top p {
+        font-size: 14px;
+        margin-left: 9em;
+    }
+
+    .toggle__numbers p {
+        margin-inline: 8px;
+    }
+
+    .toggle__btn {
+        width: 20px;
+        height: 20px;
+        margin: 5px 4px;
+    }
+
+    #display__numbers {
+        font-size: 58px;
+        padding: 30px;
+    }
+
+    .calculator__numbers_inner {
+        gap: 1em;
+    }
+
+    .number {
+        padding: 15px;
+    }
+
+    #reset__btn {
+        padding: 20px;
+    }
 }
