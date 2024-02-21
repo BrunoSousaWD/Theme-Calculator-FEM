@@ -140,6 +140,7 @@ ul {
 .calculator__top_right {
     align-self: flex-end;
     align-self: right;
+    margin-left: 2em;
 }
 
 .calculator__top p {
@@ -294,13 +295,14 @@ ul li {
 
 /* media queries */
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 480px) {
     .container {
         width: 90%;
     }
 
-    .calculator__top {
-        justify-content: unset;
+
+    .calculator__top_right {
+        margin-left: 0;
     }
 
     .calculator__top_right_toggle {

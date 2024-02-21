@@ -88,7 +88,14 @@ theme3.addEventListener('click', () => {
     document.body.classList.add('theme_3');
     document.body.classList.remove('theme_1', 'theme_2');
 })
-//limit the number of characters on the display
-//limit the number of floats
 
+
+
+
+
+function onKeyUp(e) {
+    let addToDisplay;
+    if (e.key === "Enter") addToDisplay(number);
+    console.log("pressed");
+}
 
