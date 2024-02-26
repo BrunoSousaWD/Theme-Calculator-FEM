@@ -2,17 +2,16 @@ let number = document.querySelectorAll('.number');
 let display = document.getElementById('display__numbers');
 
 
-
-
+//add to display function
 function addToDisplay(number) {
     let currentDisplay = display.innerHTML;
     const operators = ['+', '-', '*', '/'];
     if (currentDisplay === '0') {
         display.innerHTML = number;
     } else {
-        let last = currentDisplay.slice(-1);
-        if (operators.includes(number) && operators.includes(last)) {
-            return;
+        let last = currentDisplay.slice(-1);    //takes the last value
+        if (operators.includes(number) && operators.includes(last)) { //checks if last value is in the operators array and if it's the same as the last input
+            return; //if it's the same as the last one, do nothing
         } else {
             display.innerHTML = currentDisplay += number;
         }
