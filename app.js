@@ -100,7 +100,6 @@ theme3.addEventListener('click', () => {
 // keyboard functionality
 document.body.addEventListener('keydown', (ev) => {
     let key = ev.key;
-    console.log(key);
     switch (key) {
         case "0":
             addToDisplay('0');
@@ -154,7 +153,6 @@ document.body.addEventListener('keydown', (ev) => {
             break;
         case 'Enter':
             equal();
-
         default: return; // in case of other key pressed exit this function
     }
 })
