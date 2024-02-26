@@ -11,7 +11,6 @@ function addToDisplay(number) {
         display.innerHTML = number;
     } else {
         let last = currentDisplay.slice(-1);
-        console.log(last);
         if (operators.includes(number) && operators.includes(last)) {
             return;
         } else {
@@ -42,7 +41,7 @@ function del() {
 }
 
 
-//Toggle Switch
+//Toggle Theme Switch
 let theme1 = document.getElementById('theme1');
 let theme2 = document.getElementById('theme2');
 let theme3 = document.getElementById('theme3');
@@ -102,61 +101,61 @@ theme3.addEventListener('click', () => {
 // keyboard functionality
 document.body.addEventListener('keydown', (ev) => {
     let key = ev.key;
-    let number;
+    console.log(key);
     switch (key) {
+        case "0":
+            addToDisplay('0');
+            break;
         case '1':
-            number = 1;
+            addToDisplay('1');
             break;
         case '2':
-            number = 2;
+            addToDisplay('2');
             break;
         case '3':
-            number = 3;
+            addToDisplay('3');
             break;
         case '4':
-            number = 4;
+            addToDisplay('4');
             break;
         case '5':
-            number = 5;
+            addToDisplay('5');
             break;
         case '6':
-            number = 6;
+            addToDisplay('6');
             break;
         case '7':
-            number = 7;
+            addToDisplay('7');
             break;
         case '8':
-            number = 8;
+            addToDisplay('8');
             break;
         case '9':
-            number = 9;
+            addToDisplay('9');
             break;
 
-        //symbols
+        //Operators
         case '+':
-            number = '+';
+            addToDisplay('+');
             break;
         case '*':
-            number = '*';
+            addToDisplay('*');
             break;
         case '/':
-            number = '/';
+            addToDisplay('/');
             break;
         case '-':
-            number = '-';
+            addToDisplay('-');
             break;
+        case 'Backspace':
+            del();
+            break;
+        case 'Delete':
+            res();
+            break;
+        case 'Enter':
+            equal();
+
         default: return; // in case of other key pressed exit this function
     }
-    if (key === 'Backspace') {
-        del();
-    } else {
-        addToDisplay(number);
-
-    }
 })
-
-
-
-// Error fix
-// make sure theres only one operator at a time
-//functionalities of equal del reset buttons
