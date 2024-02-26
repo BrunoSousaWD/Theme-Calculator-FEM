@@ -92,10 +92,69 @@ theme3.addEventListener('click', () => {
 
 
 
+// keyboard functionality
+document.body.addEventListener('keydown', (ev) => {
+    let key = ev.key;
+    let number;
+    switch (key) {
+        case '1':
+            number = 1;
+            break;
+        case '2':
+            number = 2;
+            break;
+        case '3':
+            number = 3;
+            break;
+        case '4':
+            number = 4;
+            break;
+        case '5':
+            number = 5;
+            break;
+        case '6':
+            number = 6;
+            break;
+        case '7':
+            number = 7;
+            break;
+        case '8':
+            number = 8;
+            break;
+        case '9':
+            number = 9;
+            break;
 
-function onKeyUp(e) {
-    let addToDisplay;
-    if (e.key === "Enter") addToDisplay(number);
-    console.log("pressed");
-}
+        //symbols
+        case '+':
+            number = '+';
+            break;
+        case '*':
+            number = '*';
+            break;
+        case '/':
+            number = '/';
+            break;
+        case '-':
+            number = '-';
+            break;
+        default: return; // in case of other key pressed exit this function
+    }
+    if (key === 'Backspace') {
+        del();
+    } else {
+        addToDisplay(number);
+    }
 
+
+
+
+    console.log(key);
+    // console.log(number);
+})
+
+
+
+// Error fix
+// make sure theres only one operator at a time
+//functionalities of equal del reset buttons
