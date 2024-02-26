@@ -6,12 +6,19 @@ let display = document.getElementById('display__numbers');
 
 function addToDisplay(number) {
     let currentDisplay = display.innerHTML;
+    const operators = ['+', '-', '*', '/'];
     if (currentDisplay === '0') {
         display.innerHTML = number;
     } else {
-        display.innerHTML = currentDisplay += number;
+        let last = currentDisplay.slice(-1);
+        console.log(last);
+        if (operators.includes(number) && operators.includes(last)) {
+            return;
+        } else {
+            display.innerHTML = currentDisplay += number;
+        }
     }
-    return display.innerHTML;
+    return currentDisplay;
 }
 
 
@@ -144,13 +151,8 @@ document.body.addEventListener('keydown', (ev) => {
         del();
     } else {
         addToDisplay(number);
+
     }
-
-
-
-
-    console.log(key);
-    // console.log(number);
 })
 
 
